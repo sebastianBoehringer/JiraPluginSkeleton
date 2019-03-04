@@ -5,8 +5,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.schmalz</groupId>
-    <artifactId>JiraPluginSkeleton</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>newAMPSVersion</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <organization>
@@ -14,8 +14,8 @@
         <url>http://www.example.com/</url>
     </organization>
 
-    <name>JiraPluginSkeleton</name>
-    <description>This is the com.schmalz:JiraPluginSkeleton plugin for Atlassian JIRA.</description>
+    <name>newAMPSVersion</name>
+    <description>This is the com.example:newAMPSVersion plugin for Atlassian JIRA.</description>
     <packaging>atlassian-plugin</packaging>
 
     <dependencies>
@@ -98,7 +98,7 @@
         <plugins>
             <plugin>
                 <groupId>com.atlassian.maven.plugins</groupId>
-                <artifactId>maven-jira-plugin</artifactId>
+                <artifactId>jira-maven-plugin</artifactId>
                 <version>${amps.version}</version>
                 <extensions>true</extensions>
                 <configuration>
@@ -115,7 +115,6 @@
                     </pluginArtifacts>
                     -->
                     <enableQuickReload>true</enableQuickReload>
-                    <enableFastdev>false</enableFastdev>
 
                     <!-- See here for an explanation of default instructions: -->
                     <!-- https://developer.atlassian.com/docs/advanced-topics/configuration-of-instructions-in-atlassian-plugins -->
@@ -124,7 +123,7 @@
 
                         <!-- Add package to export here -->
                         <Export-Package>
-                            com.schmalz.api,
+                            com.example.api,
                         </Export-Package>
 
                         <!-- Add package import here -->
@@ -166,11 +165,11 @@
     </build>
 
     <properties>
-        <jira.version>7.12.0</jira.version>
-        <amps.version>6.3.21</amps.version>
-        <plugin.testrunner.version>1.2.3</plugin.testrunner.version>
+        <jira.version>7.13.0</jira.version>
+        <amps.version>8.0.0</amps.version>
+        <plugin.testrunner.version>2.0.1</plugin.testrunner.version>
         <atlassian.spring.scanner.version>1.2.13</atlassian.spring.scanner.version>
-        <!-- This key is used to keep the consistency between the key in atlassian-plugin.xml and the key to generate bundle. -->
+        <!-- This property ensures consistency between the key in atlassian-plugin.xml and the OSGi bundle's key. -->
         <atlassian.plugin.key>${project.groupId}.${project.artifactId}</atlassian.plugin.key>
         <!-- TestKit version 6.x for JIRA 6.x -->
         <testkit.version>6.3.11</testkit.version>
